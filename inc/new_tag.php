@@ -1,18 +1,18 @@
 <?php
 
-	//Autoloads classes and depencies
+	//Autoloads class files and depencies
 	function my_autoloader($class_name) 
         {
-            include '../classes/' . $class_name . '.class.php';
+            include $class_name . ".php";
         }
 
-    spl_autoload_register('my_autoloader');     
+    spl_autoload_register("my_autoloader");     
 
 
     //Assigns form values to variables
-    $id = $_POST['tag_form__id'];
-    $name = $_POST['tag_form__name'];
-    $href = $_POST['tag_form__href'];
+    $id = $_POST["tag_form__id"];
+    $name = $_POST["tag_form__name"];
+    $href = $_POST["tag_form__href"];
 
     $tag_class = new add_tags();
     
