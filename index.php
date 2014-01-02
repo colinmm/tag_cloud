@@ -13,7 +13,16 @@
 		</form>
 	</div>
 	<div class="tag_cloud">
-		<?php ?>
+		<?php
+
+			$tag_class = new add_tags();
+
+            $tag_array = $tag_class->selectTag($sec_num);
+
+            foreach ($tag_array as $single_tag) {
+                echo "<a href='" . $single_tag->getTag() . " &&tag=" . $single_tag->getID() . "' class='tag" . $single_tag->getCloud_Class() . "'>" . $single_tag->getTag() . "</a>";
+            }
+		?>
 	</div>
 </body>
 </html>
